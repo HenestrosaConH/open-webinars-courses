@@ -1,0 +1,75 @@
+<!--
+    DOM (Document Object Model): It's the HTML structure of the web page.
+    Structure: document > html (root element) > [elements like head, body, h1…]
+-->
+
+<html>
+<head>
+    <title>DOM example</title>
+</head>
+    
+<body>
+    <h2>DOM</h2>
+    <p id="paragraph">Practical lesson of DOM</p>
+    <input id="chore-todo" type="text">
+    <button id="add-btn" type="reset">Add</button>
+    <ul id ="todo-list"></ul>
+
+    <script type="text/javascript">
+        // document is an object that provides access to all HTML elements of a document
+        var paragraph = document.getElementById("paragraph");
+        // prints <p id="paragraph">Practical lesson of DOM</p>
+        console.log(paragraph);
+        // prints Practical class of DOM
+        console.log(paragraph.innerText);
+
+        var h2 = document.getElementsByTagName("h2");
+        /* returns HTMLCollection, which is an array-like object that, in this case, 
+         contains all the h2 elements of the DOM */
+        h2[0].id = "main-header";
+        h2[0].style.backgroundColor = "yellow";
+
+        // Inserting nodes
+        var chores = [
+            "Do the laundry",
+            "Cook dinner",
+            "Throw trash"
+        ];
+        var todoList = document.querySelector("#todo-list");
+
+        function insertListItem(value, id) {
+            let li = document.createElement("li");
+            // Setting the text of the li
+            li.textContent = value;
+            // Setting an id to the li
+            if (id) {
+                li.id = id;
+            }
+            // Adding the li to the ul
+            todoList.appendChild(li);
+        }
+
+        for (let i = 0; i < chores.length; i++) {
+            insertListItem(chores[i], "chore_" + i);
+        }
+        
+        // Removing nodes
+        todoList.removeChild(document.getElementById("chore_0"));
+        // setTimeout() method calls a function or evaluates an expression after
+        // a specified number of milliseconds.
+        setTimeout(function () {
+            todoList.removeChild(document.getElementById("chore_1"));
+        }, 3000);
+
+        /* Exercise related to the 7th part:
+            Add an input and a button to the HTML to create elements in our TODO list.
+            We'll capture the button event to create a list item according to the 
+            content of the input.
+        */
+        document.getElementById("add-btn").addEventListener("click", function (event) {
+            insertListItem(document.getElementById("chore-todo").value);
+        });
+    </script>
+</body>
+
+</html>
