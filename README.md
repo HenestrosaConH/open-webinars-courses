@@ -14,3 +14,4 @@ List of courses that I've taken at OpenWebinars but are not translated into Engl
 - SOLID and designing patterns
 - Java XML
 - Sass 
+- Beginner JavaScript
