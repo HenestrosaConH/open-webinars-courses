@@ -1,54 +1,54 @@
 <!--
-    Main events
-    --------------------------
-    Keyboard: keyDown / keyUp
+	Main events
+	--------------------------
+	Keyboard: keyDown / keyUp.
 
-    Mouse:
-        onclick
-        onmousedown (when clicking on an element)
-        onmouseenter (when hovering an element)
-        onmousemove (when the mouse is moving within an element)
+	Mouse:
+		onclick.
+		onmousedown (when clicking on an element).
+		onmouseenter (when hovering an element).
+		onmousemove (when the mouse is moving within an element).
 
-    Browser: DOMContentLoaded (page loaded)
+	Browser: DOMContentLoaded (page loaded).
 -->
 <html>
 
 <head>
-    <title>Events example</title>
+	<title>Events example</title>
 </head>
 
 <body>
-    <h1>Events</h1>
-    <button id="change-background">Change background</button>
+	<h1>Events</h1>
+	<button id="change-background">Change background</button>
 
-    <script type="module">
-        import { getRandom } from "./3_math.js"
+	<script type="module">
+		import { getRandom } from "./3_math.js"
 
-        document.addEventListener("keydown", function (event) {
-            console.log(event);
-        });
+		document.addEventListener("keydown", function (event) {
+			console.log(event);
+		});
 
-        let button = document.getElementById("change-background");
-        button.addEventListener("click", function (event) {
-            let randomColor = [
-                getRandom(255),
-                getRandom(255),
-                getRandom(255)
-            ];
-            document.body.style.backgroundColor = 
-                "rgb(" + randomColor[0] + "," + randomColor[1] + "," + randomColor[2] + ")";
-        });
+		let button = document.getElementById("change-background");
+		button.addEventListener("click", function (event) {
+			let randomColor = [
+				getRandom(255),
+				getRandom(255),
+				getRandom(255)
+			];
+			document.body.style.backgroundColor = 
+				"rgb(" + randomColor[0] + "," + randomColor[1] + "," + randomColor[2] + ")";
+		});
 
-        // Custom events
-        let event = new CustomEvent("displayAtStart", { "detail": "I'm on the screen!" });
-        document.addEventListener("displayAtStart", function (event) {
-            console.log(event);
-        });
-        // dispatchEvent(event) triggers an event whenever it's called
-        document.dispatchEvent(event);
+		// Custom events:
+		let event = new CustomEvent("displayAtStart", { "detail": "I'm on the screen!" });
+		document.addEventListener("displayAtStart", function (event) {
+			console.log(event);
+		});
+		// dispatchEvent(event) triggers an event whenever it's called:
+		document.dispatchEvent(event);
 
-        // EXERCISE OF EVENTS AT THE BOTTOM OF THE 5TH PART
-    </script>
+		// EXERCISE OF EVENTS AT THE BOTTOM OF THE 5TH PART.
+	</script>
 </body>
 
 </html>

@@ -1,58 +1,58 @@
 /*
-    - The use of object-oriented and functional programming in JS depends on our needs
-    - Hoisting: In JS, functions are allocated in memory before their usage.  However, this is not applied to classes declared with "class"
-    - Since ES6, syntactic sugar "class" was added, but they're functions at their core
+	- The use of object-oriented and functional programming in JS depends on our needs
+	- Hoisting: In JS, functions are allocated in memory before their usage.  However, this is not applied to classes declared with "class"
+	- Since ES6, syntactic sugar "class" was added, but they're functions at their core
 */
-// Functional approach to OOP
+// Functional approach to OOP:
 const VehicleFunctional = function(fuelType) {
-    this.fuelType = fuelType;
-    this.isStarted = false;
-    this.speed = 0;
-    this.fuel = 0;
+	this.fuelType = fuelType;
+	this.isStarted = false;
+	this.speed = 0;
+	this.fuel = 0;
 }
 
 VehicleFunctional.prototype.start = function () {
-    if (this.fuel > 0) {
-        this.isStarted = true;
-    }
+	if (this.fuel > 0) {
+		this.isStarted = true;
+	}
 }
 
 VehicleFunctional.prototype.refuel = function () {
-    this.fuel = 100;
+	this.fuel = 100;
 }
 
-// Class approach
+// Class approach (modern way thanks to ES6):
 class Vehicle {
-    constructor(fuelType) {
-        this.fuelType = fuelType;
-        this.isStarted = false;
-        this.speed = 0;
-        this.fuel = 0;
-    }
+	constructor(fuelType) {
+		this.fuelType = fuelType;
+		this.isStarted = false;
+		this.speed = 0;
+		this.fuel = 0;
+	}
 
-    start() {
-        if (this.fuel > 0) {
-            this.isStarted = true;
-        }
-    }
+	start() {
+		if (this.fuel > 0) {
+			this.isStarted = true;
+		}
+	}
 
-    refuel() {
-        this.fuel = 100;
-    }
+	refuel() {
+		this.fuel = 100;
+	}
 }
 
 // Inheritance in JS
-// Only with class approach
+// Only with class approach:
 class Car extends Vehicle {
-    constructor(fuelType, doors) {
-        super(fuelType);
-        this.doors = doors;
-        this.isOpen = false;
-    }
+	constructor(fuelType, doors) {
+		super(fuelType);
+		this.doors = doors;
+		this.isOpen = false;
+	}
 
-    setOpen(isOpen) {
-        this.isOpen = isOpen;
-    }
+	setOpen(isOpen) {
+		this.isOpen = isOpen;
+	}
 }
 
 const mazda = new Car("Gasoline", 5);

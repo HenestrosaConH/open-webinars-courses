@@ -1,0 +1,17 @@
+React is based on the principle of components, which are divided into logic, styles and layout.
+
+The layout is the distribution of views on the screen. Made with HTML.
+The logic changes the behavior of the layout and its appearance. Made with JavaScript.
+The styles changes the properties of the layout (font, size, colour…). Made with CSS.
+
+Every webpage has its own layout with its respective logic. Moreover, there is a common logic file to the entire the website.
+The styles are common to the entire the website.
+
+A webpage is divided into this order: Page > Container > Component. A component is composed by layout, logic and style.
+
+The atomic design (https://bradfrost.com/blog/post/atomic-web-design/) divides the elements of the layout like this:
+- Atoms. I.e. a button
+- Molecules. I.e. a bunch of non-connected and incoherent components.
+- Organisms. I.e. a bunch of connected and incoherent components.
+- Templates. I.e. a bunch of connected and coherent components.
+- Pages. I.e. a template with actual content.

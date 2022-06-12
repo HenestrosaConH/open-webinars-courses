@@ -1,0 +1,19 @@
+The anatomy of React is divided into two concepts:
+
+Reconciliation: 
+Prepares the components to render. It achieves that through the virtual DOM, which is a copy of the DOM that allows the web to access and edit the elements more efficient and faster.
+For each event that we capture from the DOM, the app tries to get the implied nodes to pass them to the Virtual DOM, which compares the DOM with the changes made, which is called "diffing process".
+
+- Rendering: 
+Prints the views on the screen.
+There are different sorts of React, depending on what are we trying to achieve. The one that we will be covering is ReactJS, but there are React Native (mobile apps) and React VR. 
+However, all of them have a very similar structure because they all use the core of React, which is the app and the virtual DOM.
+ReactJS has, as stated before, a DOM. React Native and React VR have a bridge that connect the mobile phone with the app and the virtual DOM. As stated before, out bridge will be the DOM.
+
+The React ecosystem for web development has libraries to make the work easier such as:
+- Rendering: React DOM
+- Routing: React Router
+- State Management: Redux
+- Forms: Formik
+- Tests: Jest
+- Bundling: Webpack / Parcel

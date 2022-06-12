@@ -1,0 +1,24 @@
+Server-side:
+Node.js: It's a back-end JavaScript runtime environment for executing server-side JavaScript
+JavaScript: The programming language
+NPM (Node Package Manager): Pretty much self-explained
+
+Client-side:
+Web client: Chrome, Firefox, Safari
+HTML, CSS & JavaScript
+NPM: At first, Bower was used for implementing external libraries, but it has been replaced for NPM, even though it was targeted towards Node.js at the beginning
+
+
+Steps to get React working
+
+1. For starting npm in our project: npm init
+2. Install React: npm install react
+3. Install React DOM: npm install react-dom
+3. Install a bundler (in this case, Parcel): yarn add --dev parcel-bundler
+// --saved-dev (npm) || --dev (yarn): Dependency needed for developing purposes
+4. Add this script to the package.json: "start": "parcel index.html"
+5. ESLint
+	5.1. Add ESLint to the project: yarn add --dev eslint
+	5.1. Init ESLint: eslint --init OR ./node_modules/.bin/eslint --init
+	5.2. Add a lint script in package.json: "scripts": { "lint": "eslint --fix src/**/*.{js,jsx}" }
+6. Add PropTypes: yarn add prop-types
